@@ -85,11 +85,10 @@ public class ArabicToRomansConverterTest {
 				else if (i>10) {
 					s = "X";
 					i = i - 10;
-					//log
 				}
 			} while (i>0);
 
-			//ejemplo
+			//ejemplo4
 			return s;
 	}
 
