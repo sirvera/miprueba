@@ -88,7 +88,7 @@ public class ArabicToRomansConverterTest {
 				}
 			} while (i>0);
 
-			//ejemplo5
+			//ejemplo6
 			return s;
 	}
 
