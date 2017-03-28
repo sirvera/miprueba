@@ -102,7 +102,6 @@ public class ArabicToRomansConverterTest {
 
 
 	private String convert(int i) {
-			String s = "";
 			String[] arrArabic = {"I","IV","V","IX","X","XL","L","XC","IC","C","D","M"};
 			int[] arrDecimal = {1,4,5,9,10,40,50,90,99,100,500,1000};
 			int j = arrDecimal.length - 1;
