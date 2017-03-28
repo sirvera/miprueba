@@ -86,50 +86,34 @@ public class ArabicToRomansConverterTest {
 	public void test65() {
 		assertEquals("LXV", convert(65));
 	}
+	@Test
+	public void test96() {
+		assertEquals("XCVI", convert(96));
+	}
+	@Test
+	public void test99() {
+		assertEquals("IC", convert(99));
+	}
+	@Test
+	public void test100() {
+		assertEquals("C", convert(100));
+	}
+
 
 
 	private String convert(int i) {
 			String s = "";
-			
+			String[] arrArabic = {"I","IV","V","IX","X","XL","L","XC","IC","C","D","M"};
+			int[] arrDecimal = {1,4,5,9,10,40,50,90,99,100,500,1000};
+			int j = arrDecimal.length - 1;
 			do {
-				if (i>=50) {
-					s = s.concat("L");
-					i = i - 50;
+				if (i >= arrDecimal[j]) {
+						i = i - arrDecimal[j];
+						return String.valueOf(arrArabic[j]) + convert(i);
 				}
-				if (i>=40) {
-					s = s.concat("XL");
-					i = i - 40;
-				}
-				if (i>=10) {
-					s = s.concat("X");
-					i = i - 10;
-				}
-				else if (i < 10) {
-					if (i>=1 && i<4) {
-						s = ciclo(0, i, s);
-					}
-					else if (i>=4 && i<9) {
-						if (i==4) {
-							s = s.concat("I");
-						}
-						s = s.concat("V");
-						s = ciclo(5, i, s);
-					}
-					else if (i==9)
-						s = s.concat("IX");
-					i = 0;
-				}
-				
+				j--;
 			} while (i>0);
-			return s;
-	}
-	
-	private String ciclo(int inicial, int i, String s) {
-		int j;
-		for (j=inicial;j<i;j++){
-			s = s.concat("I");
-		}
-		return s;
+			return "";
 	}
 
 }
